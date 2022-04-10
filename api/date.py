@@ -13,4 +13,7 @@ class handler(BaseHTTPRequestHandler):
     message = "test"
     # self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     self.wfile.write(message.encode())
+    self.wfile.write(calendar.iterweekdays().encode())
+
+
     return
