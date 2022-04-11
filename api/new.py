@@ -16,8 +16,7 @@ class handler(BaseHTTPRequestHandler):
       message = f"the Query ID is {name}"
     else:
       message = "NO Query added to the URL .... parse not possible "
-    message += f"\n Dear visitor number "
-    # str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    message += f"\n Dear visitor  "
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
