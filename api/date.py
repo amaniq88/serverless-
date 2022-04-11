@@ -1,8 +1,5 @@
-from email import message
 from http.server import BaseHTTPRequestHandler
 from datetime import datetime
-import calendar
-calendar.setfirstweekday(calendar.SUNDAY)
 
 class handler(BaseHTTPRequestHandler):
 
