@@ -20,11 +20,13 @@ class handler(BaseHTTPRequestHandler):
     
     message += f"\n Greeting {platform.python_version()}"
 
-    self.wfile.write(message.encode())
-
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
+
+    self.wfile.write(message.encode())
+
+
     message1 = '''
     Welcome to the MY first application of the serverless function .... 
     will give some updated usefull infromation
