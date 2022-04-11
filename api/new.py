@@ -17,19 +17,9 @@ class handler(BaseHTTPRequestHandler):
     self.wfile.write(message.encode())
 
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
-    message1 = '''
-
-
-    Yup these are the remaining moths and days upto the end of the month and end of the year 
-
-
-    '''
+    
+    message1 = self.path
     self.wfile.write(message1.encode())
-    month = date.month
-    remaining = 12 - month
-    x = datetime.datetime.now()
-
-    self.wfile.write(str(datetime.datetime.now()).encode())
 
     # day = date.day
     # remaining2 = 30 - day
@@ -43,6 +33,6 @@ class handler(BaseHTTPRequestHandler):
 
     return
 
-
+print(datetime.date())
 
 
