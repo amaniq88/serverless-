@@ -16,7 +16,7 @@ class handler(BaseHTTPRequestHandler):
     '''
     self.wfile.write(message.encode())
 
-    self.wfile.write(str(datetime.now().split("-")).encode())
+    self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     message1 = '''
 
 
@@ -27,14 +27,22 @@ class handler(BaseHTTPRequestHandler):
     self.wfile.write(message1.encode())
     month = date.month
     remaining = 12 - month
-    self.wfile.write(str(date.month).encode())
+    x = datetime.datetime.now()
+
+    self.wfile.write(str(datetime.datetime.now()).encode())
 
     # day = date.day
     # remaining2 = 30 - day
     # self.wfile.write(str(remaining2).encode())
+
+# print(x.year)
+# print(x.strftime("%A"))
  
 
 
 
     return
+
+
+
 
