@@ -9,11 +9,6 @@ class handler(BaseHTTPRequestHandler):
     self.send_header('Content-type', 'text/plain')
     self.end_headers() 
     ###############################
-
-
-# Convert a Hijri date to Gregorian
-  # importing requests and json
-# base URL
     BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
     CITY = "Amman"
     API_KEY = "d4d48bc4478ea6f2ed41d2d7135001cd"
@@ -35,14 +30,16 @@ class handler(BaseHTTPRequestHandler):
       pressure = main['pressure']
       # weather report
       report = data['weather']
-      self.wfile.write(f"{CITY:-^30}".encode())
+      # self.wfile.write(f"{CITY:-^30}".encode())
+      message = "******  crrent Time is  ***** "
+      self.wfile.write(message.encode())
       # print(f"Temperature: {temperature}")
       # print(f"Humidity: {humidity}")
       # print(f"Pressure: {pressure}")
       # print(f"Weather Report: {report[0]['description']}")
-    else:
-      # showing the error message
-      print("Error in the HTTP request")
+    # else:
+    #   # showing the error message
+    #   print("Error in the HTTP request")
 
     return
 
