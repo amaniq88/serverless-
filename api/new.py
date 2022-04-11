@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler
-from datetime import datetime
+from datetime import datetime , date 
 
 class handler(BaseHTTPRequestHandler):
 
@@ -12,11 +12,25 @@ class handler(BaseHTTPRequestHandler):
     will give some updated usefull infromation
 
                   ******  crrent Time is  *****   
-                    
+
     '''
     self.wfile.write(message.encode())
 
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
+    message1 = '''
+    \n
+    Yup these are the remaining moths and days upto the end of the month and end of the year 
+    \n
+    '''
+    self.wfile.write(message1.encode())
+    month = date.month
+    remaining = 12 - month
+    self.wfile.write(str(remaining).encode())
+
+    day = date.day
+    remaining2 = 30 - day 
+    self.wfile.write(str(remaining2).encode())
+ 
 
 
 
