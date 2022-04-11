@@ -10,10 +10,10 @@ class handler(BaseHTTPRequestHandler):
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
-    message = "test"
-    # self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
+    message = "******  crrent Time is  ***** "
     self.wfile.write(message.encode())
-    self.wfile.write(calendar.iterweekdays().encode())
+    self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
+
 
 
     return
