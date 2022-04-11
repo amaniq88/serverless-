@@ -18,9 +18,7 @@ class handler(BaseHTTPRequestHandler):
 
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     message1 = '''
-    \n
     Yup these are the remaining moths and days upto the end of the month and end of the year 
-    \n
     '''
     self.wfile.write(message1.encode())
     month = date.month
