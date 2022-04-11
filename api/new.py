@@ -18,18 +18,23 @@ class handler(BaseHTTPRequestHandler):
 
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     message1 = '''
+
+
     Yup these are the remaining moths and days upto the end of the month and end of the year 
+
+
     '''
     self.wfile.write(message1.encode())
     month = date.month
     remaining = 12 - month
-    self.wfile.write(str(remaining).encode())
+    self.wfile.write(str(date.month).encode())
 
-    day = date.day
-    remaining2 = 30 - day 
-    self.wfile.write(str(remaining2).encode())
+    # day = date.day
+    # remaining2 = 30 - day
+    # self.wfile.write(str(remaining2).encode())
  
 
 
 
     return
+
