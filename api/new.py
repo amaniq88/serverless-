@@ -1,38 +1,43 @@
 from http.server import BaseHTTPRequestHandler
+from platform import platform
+from unicodedata import name
+from urllib import parse
 from datetime import datetime , date 
 
 class handler(BaseHTTPRequestHandler):
 
   def do_GET(self):
+    s = self.path
+    urlcomponent = parse.urlsplit(s)
+    qslist = parse.parse_qsl(urlcomponent.query)
+    dice = dict(qslist)
+    name = dice.get("name")
+
+    if name:
+      message = f"aloha {name}"
+    else:
+      message = "aloha stranger"
+    
+    message += f"\n Greeting {platform.python_version()}"
+
+    self.wfile.write(message.encode())
+
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
-    message = '''
+    message1 = '''
     Welcome to the MY first application of the serverless function .... 
     will give some updated usefull infromation
 
                   ******  crrent Time is  *****   
 
     '''
-    self.wfile.write(message.encode())
-
-    self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
-    
-    message1 = self.path
     self.wfile.write(message1.encode())
 
-    # day = date.day
-    # remaining2 = 30 - day
-    # self.wfile.write(str(remaining2).encode())
-
-# print(x.year)
-# print(x.strftime("%A"))
+    self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
  
 
 
 
     return
-
-print(datetime.date())
-
 
