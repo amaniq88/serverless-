@@ -18,7 +18,7 @@ class handler(BaseHTTPRequestHandler):
     else:
       message = "aloha stranger"
     
-    message += f"\n Greeting today date is {s}"
+    message += f"\n Greeting today date is {urlcomponent}"
     # str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
