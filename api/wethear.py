@@ -17,22 +17,21 @@ class handler(BaseHTTPRequestHandler):
     # HTTP request
     response = requests.get(URL)
     # checking the status code of the request
-    if response.status_code == 200:
       # getting data in the json format
-      data = response.json()
+    data = response.json()
       # getting the main dict block
-      main = data['main']
+    main = data['main']
       # getting temperature
-      temperature = main['temp']
+    temperature = main['temp']
       # getting the humidity
-      humidity = main['humidity']
+    humidity = main['humidity']
       # getting the pressure
-      pressure = main['pressure']
+    pressure = main['pressure']
       # weather report
-      report = data['weather']
+    report = data['weather']
       # self.wfile.write(f"{CITY:-^30}".encode())
-      message = "******  crrent Time is  ***** "
-      self.wfile.write(message.encode())
+    message = "******  crrent Time is  ***** "
+    self.wfile.write(message.encode())
       # print(f"Temperature: {temperature}")
       # print(f"Humidity: {humidity}")
       # print(f"Pressure: {pressure}")
