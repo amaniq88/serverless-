@@ -14,11 +14,12 @@ class handler(BaseHTTPRequestHandler):
     name = dice.get("name")
 
     if name:
-      message = f"aloha {name}"
+      message = f"the Query ID is {name}"
     else:
-      message = "aloha stranger"
+      message = "NO Query added to the URL .... parse not possible "
     
-    message += f"\n Greeting today date is {qslist}"
+    count +=1
+    message += f"\n Dear visitor number  {count}"
     # str(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
