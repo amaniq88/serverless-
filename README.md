@@ -7,3 +7,7 @@ Testing :
     git commit -m "  " 
     git push origoin - u main 
 2 - check on the server if the changed appear and its coming without any error 
+
+link : https://serverless-lake-three.vercel.app/api/new?name=Amani
+
+you can Replace the Amani with any other name then hit enter 
